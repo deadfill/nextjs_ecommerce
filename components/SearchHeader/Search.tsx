@@ -1,17 +1,12 @@
 import { SearchProps } from "./Search.props";
 import styles from "./Search.module.css";
-import clsx from "clsx";
 import { useDispatch } from "react-redux";
 import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export default function Search({
-  children,
-  ...props
-}: SearchProps): JSX.Element {
+export default function Search({ ...props }: SearchProps): JSX.Element {
   const router = useRouter();
   const [query, setQuery] = useState<string>("");
-  const dispatch = useDispatch();
   const dynamicRoute = useRouter().asPath;
 
   useEffect(() => setQuery(""), [dynamicRoute]);
