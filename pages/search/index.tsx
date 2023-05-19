@@ -1,7 +1,8 @@
 import { GetServerSideProps } from "next";
 
-import { IProduct } from "@/models/Product";
+import Product, { IProduct } from "@/models/Product";
 import ProductItem from "@/components/ProductItem/ProductItem";
+import dbConnect from "@/libs/mongodb";
 
 export default function Search({ data }: { data: IProduct[] }): JSX.Element {
   console.log(data);
@@ -14,9 +15,10 @@ export default function Search({ data }: { data: IProduct[] }): JSX.Element {
 export const getServerSideProps: GetServerSideProps<{
   data: IProduct[];
 }> = async (context) => {
-  const param = context.query.q;
-  const res = await fetch(`http://localhost:3000/api/search?q=${param}`);
-  const data: IProduct[] = await res.json();
+  const param = context.query.q as string;
+  await dbConnect();
+  const res = await Product.find({ $text: { $search: param } });
+  const data = JSON.parse(JSON.stringify(res));
 
   return {
     props: {
