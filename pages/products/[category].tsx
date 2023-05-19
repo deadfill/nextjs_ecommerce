@@ -22,9 +22,11 @@ const Category = ({ data }: { data: IProduct[] }) => {
 export default Category;
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`http://localhost:3000/api/getAllProducts`);
-  const data = await res.json();
-  const paths = await data.product.map((item: IProduct) => {
+  await dbConnect();
+  const res = await Product.find().exec();
+  const data = JSON.parse(JSON.stringify(res));
+  console.log(data);
+  const paths = await data.map((item: IProduct) => {
     return {
       params: { category: item.category },
     };
@@ -39,7 +41,6 @@ export const getStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (query) => {
   const { category }: any = query.params;
   await dbConnect();
-  console.log(category);
   const res = await Product.find({
     category: { $regex: category, $options: "i" },
   }).exec();
