@@ -10,6 +10,9 @@ export interface IProduct {
   category: string;
   vote_average: number;
   image_url: string;
+  catalogue_number: string;
+  code: string;
+  barcode: string;
 }
 
 const productSchema = new Schema<IProduct>({
@@ -20,7 +23,10 @@ const productSchema = new Schema<IProduct>({
   descriptions: String,
   category: String,
   vote_average: Number,
-  image_url: String
+  image_url: String,
+  catalogue_number: String,
+  code: String,
+  barcode: String
 },
   { timestamps: true }
 );

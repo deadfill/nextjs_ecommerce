@@ -1,24 +1,29 @@
-import { IProduct } from "@/models/Product";
-import { GetStaticProps } from "next";
+import dbConnect from "@/libs/mongodb";
+import Product from "@/models/Product";
+import { GetServerSideProps } from "next";
 import Link from "next/link";
+import { Key } from "react";
 
-const Category = ({ data }: { data: IProduct[] }) => {
-  return data.map((item) => (
+const Category = ({ category }: any) => {
+  return category.map((item: string, index: Key) => (
     <Link
       href={{
-        pathname: `/products/${item.category}`,
+        pathname: `/products/${item}`,
       }}
-      key={item._id}
+      key={index}
     >
-      <div>{item.category}</div>
+      <div>{item}</div>
     </Link>
   ));
 };
 
 export default Category;
 
-export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`http://localhost:3000/api/getAllProducts`);
-  const data = await res.json();
-  return { props: { data: data.product } };
+export const getServerSideProps: GetServerSideProps = async () => {
+  await dbConnect();
+  const category = await Product.distinct("category");
+  // const category = res.map((item) => {
+  //   return item.toLowerCase();
+  // });
+  return { props: { category } };
 };

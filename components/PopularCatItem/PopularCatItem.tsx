@@ -13,7 +13,7 @@ export default function PopularCatItem({
     <Link href={path} className={styles.wrapper}>
       <div {...props} className={styles.itemPopular}>
         <div className={styles.imgWrapper}>
-          <Image src={icon} alt={""} fill />
+          <Image width={80} height={80} src={icon} alt={""} />
         </div>
         <p className={styles.text}>{name}</p>
       </div>

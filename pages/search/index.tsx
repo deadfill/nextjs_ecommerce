@@ -3,6 +3,14 @@ import { GetServerSideProps } from "next";
 import { IProduct } from "@/models/Product";
 import ProductItem from "@/components/ProductItem/ProductItem";
 
+export default function Search({ data }: { data: IProduct[] }): JSX.Element {
+  console.log(data);
+  const render = data.map((item) => {
+    return <ProductItem key={item._id} data={item}></ProductItem>;
+  });
+  return <div>{data.length == 0 ? <div>Ничего не найдено</div> : render}</div>;
+}
+
 export const getServerSideProps: GetServerSideProps<{
   data: IProduct[];
 }> = async (context) => {
@@ -16,10 +24,3 @@ export const getServerSideProps: GetServerSideProps<{
     },
   };
 };
-
-export default function Search({ data }: { data: IProduct[] }): JSX.Element {
-  const render = data.map((item) => {
-    return <ProductItem key={item._id} data={item}></ProductItem>;
-  });
-  return <div>{data.length == 0 ? <div>Ничего не найдено</div> : render}</div>;
-}

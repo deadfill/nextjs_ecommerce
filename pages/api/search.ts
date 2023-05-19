@@ -4,11 +4,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   const { query } = req;
-  const queryParams = query.q;
-  console.log(queryParams);
+  const queryParams = query.q as string;
   try {
     await connectMongo();
-    const product = await Product.find({name: { $regex: queryParams, $options: 'i' }}).exec();
+    const product = await Product.find({ $text : { $search : queryParams }});
+    // const product = await Product.find({name: { $regex: queryParams, $options: 'i' }}).exec();
     res.json(product);
   } catch (error) {
     console.log(error);

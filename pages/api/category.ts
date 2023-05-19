@@ -5,7 +5,6 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   const { query } = req;
   const queryParams = query.query;
-  console.log(queryParams);
   try {
     await connectMongo();
     const product = await Product.find({category: { $regex: queryParams, $options: 'i' }}).exec();

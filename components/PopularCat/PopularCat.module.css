@@ -4,6 +4,28 @@
     grid-auto-rows: 204px;
     gap: 30px;
 }
+
+@media (max-width: 1200px) {
+    .wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+@media (max-width: 998px) {
+
+  }
+
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
    
 
 

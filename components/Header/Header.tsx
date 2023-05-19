@@ -33,7 +33,7 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
           </ButtonMenu>
         )}
 
-        <Search className={styles.search}></Search>
+        {/* <Search className={styles.search}></Search> */}
         <Navbar className={styles.navbar} />
       </div>
     </header>

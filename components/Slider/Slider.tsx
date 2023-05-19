@@ -1,29 +1,22 @@
-import { SliderProps } from "./Slider.props";
 import Image from "next/image";
 import sliderImg from "../../public/slider.jpg";
-import styles from "./Slider.module.css";
-import clsx from "clsx";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-export default function Slider({ ...props }: SliderProps): JSX.Element {
-  const active = true;
+export default function Slider(): JSX.Element {
   return (
     <section>
-      <div {...props} className={styles.slider}>
-        <Image className={styles.sliderImg} src={sliderImg} alt={""} />
-        <div className={styles.dotSpan}>
-          <span
-            className={clsx(styles.dot, {
-              [styles.dotActive]: active,
-            })}
-          ></span>
-          <span
-            onClick={() => console.log("sgf")}
-            className={styles.dot}
-          ></span>
-          <span className={styles.dot}></span>
-          <span className={styles.dot}></span>
+      <Carousel>
+        <div>
+          <Image src={sliderImg} alt={""} />
         </div>
-      </div>
+        <div>
+          <Image src={sliderImg} alt={""} />
+        </div>
+        <div>
+          <Image src={sliderImg} alt={""} />
+        </div>
+      </Carousel>
     </section>
   );
 }
