@@ -22,8 +22,5 @@ export default Category;
 export const getServerSideProps: GetServerSideProps = async () => {
   await dbConnect();
   const category = await Product.distinct("category");
-  // const category = res.map((item) => {
-  //   return item.toLowerCase();
-  // });
   return { props: { category } };
 };

@@ -1,9 +1,11 @@
 import ProductItem from "@/components/ProductItem/ProductItem";
-import { IProduct } from "@/models/Product";
+import dbConnect from "@/libs/mongodb";
+import Product, { IProduct } from "@/models/Product";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 
 const Category = ({ data }: { data: IProduct[] }) => {
+  console.log(data);
   const router = useRouter();
   console.log(router);
 
@@ -34,11 +36,13 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  const { category }: any = ctx.params;
-  const res = await fetch(
-    `http://localhost:3000/api/category?query=${category}`
-  );
-  const data = await res.json();
+export const getStaticProps: GetStaticProps = async (query) => {
+  const { category }: any = query.params;
+  await dbConnect();
+  console.log(category);
+  const res = await Product.find({
+    category: { $regex: category, $options: "i" },
+  }).exec();
+  const data = JSON.parse(JSON.stringify(res));
   return { props: { data } };
 };
