@@ -1,0 +1,108 @@
+.wrapper {
+    display: grid;
+    cursor: pointer;
+    max-width: 240px;
+}
+
+.wrapper_image {
+    position: relative;
+    height: 240px;
+}
+
+.product_price {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.product_name {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--grey-04);
+}
+
+.product_category {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: var(--orange-01);
+}
+
+.product_category_brend {
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--grey-04);
+}
+
+.product_category_name {
+    text-decoration: underline;
+}
+
+.product_cart_wrapper {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    padding: 6px 6px 6px 6px;
+    align-items: center;
+    
+}
+
+.button_cart_wrapper {
+    cursor: pointer;
+    border: none;
+    padding: 6px 6px 6px 6px;
+    border-radius: 12px;
+}
+
+.cart_counter {
+    color: var(--grey-01);
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+}
+
+.button_cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-weight: 600;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFFFFF;
+    background-color: var(--orange-01);
+  }
+  
+  .button_cart > svg {
+    margin-right: 8px;
+  }
+
+.favoriteIcon {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.incrIcon {
+
+    border: none;
+    cursor: pointer;
+    display: flex;
+}
+
+.decrIcon {
+
+    border: none;
+    cursor: pointer;
+    display: flex;
+}

@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Golos Text', sans-serif;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --grey-01: #4E4B66;
+  --grey-02: #6E7191;
+  --grey-03: #F8F8F8;
+  --grey-04: #6E7191;
+  --grey-05: #F1F1F1;
+  --grey-06: #C2C4D2;
+  --grey-07: #A0A3BC;
+  --grey-08: #E8E8E8;
+  --orange-01: #F56E1E;
+  --orange-02: #DE5703;
+  --orange-03: #DE4503;
+  --orange-light: #FCE1D2; 
+  --info-baner: #FDE9DE;
+}
+

@@ -1,0 +1,41 @@
+.wrapper {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.itemPopular {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 24px 19px 23px 19px;
+    background-color: var(--grey-05);
+    border-radius: 20px;
+    height: 100%;
+}
+
+.itemPopular:hover {
+    outline: 1px solid var(--orange-02);
+}
+
+.itemPopular:hover .text {
+    color: var(--orange-02);
+}
+
+.text {
+    margin: 0;
+    margin-top: 22px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--grey-01);
+    line-height: 21.6px;
+}
+
+.imgWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+

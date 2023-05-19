@@ -1,0 +1,34 @@
+.sliderImg {
+    border-radius: 12px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+.slider {
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.dotSpan {
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: var(--grey-06);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  .dotActive {
+    width: 22px;
+    background-color: var(--orange-01);
+    border-radius: 8px;
+  }

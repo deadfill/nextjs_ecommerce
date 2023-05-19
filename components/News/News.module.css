@@ -1,0 +1,30 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.dotSpan {
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: var(--grey-06);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  .dotActive {
+    width: 22px;
+    background-color: var(--orange-01);
+    border-radius: 8px;
+  }
+

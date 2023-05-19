@@ -1,0 +1,8 @@
+.cart_htag {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 38px;
+    color: var(--grey-01);
+    margin: 0;
+    margin-bottom: 63px;
+}

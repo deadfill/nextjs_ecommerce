@@ -1,0 +1,26 @@
+.wrapper {
+    display: none;
+    background-color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 7px 11px;
+    align-items: start;
+}
+
+.mobile_nav {
+    width: 100%;
+}
+
+.li {
+    width: 60px;
+}
+
+@media (max-width: 576px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 16px;
+    }
+  }

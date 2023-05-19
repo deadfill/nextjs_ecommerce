@@ -1,0 +1,35 @@
+.button {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    border: none;
+    font-weight: 600;
+    font-size: 12px;
+    background-color: white;
+    color: var(--grey-04);
+}
+
+.wrapper_button {
+    position: relative;
+}
+
+.cart_counter {
+    position: absolute;
+    background-color: var(--orange-01);
+    padding: 2px 4px;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+
+@media (max-width: 576px) {
+    .button {
+        margin: 0;
+        padding: 0;
+    }
+  }

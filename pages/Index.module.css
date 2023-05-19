@@ -1,0 +1,128 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-bottom: 40px;
+}
+
+.wrapper_menu {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-right: 60px;
+    
+}
+
+.menu_description {
+    padding: 13px;
+    background-color: var(--info-baner);
+    border-radius: 12px;
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    color: var(--grey-04);
+}
+
+.titleCategory {
+    padding: 8px 12px 8px 12px;
+    color: #6E7191;
+    border-radius: 8px;
+    background-color: var(--grey-05);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.category {
+    padding: 8px 12px 8px 6px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #6E7191;
+}
+
+.categoryPrice {
+    padding: 8px 12px 8px 6px;
+    margin: 0 auto; 
+}
+
+.categoryPrice input {
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #dedbdb;
+    border-radius: 12px;
+    height: 100%;
+    outline: none;
+}
+
+.currentref_label {
+    display: none;
+}
+
+.products_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.list_pagination {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.item_pagination {
+    margin-right: 10px;
+}
+
+.link_pagination {
+    font-size: 20px;
+}
+
+.link_pagination:focus {
+    font-size: 20px;
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 1200px) {
+    .wrapper_menu {
+        width: 210px;
+        margin-right: 30px;
+    }
+  }
+
+@media (max-width: 998px) {
+    .hit_list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: auto;
+    }
+    .hit_list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .wrapper_menu {
+        display: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hit_list {
+        grid-template-columns: 1fr 1fr;
+    }
+  }

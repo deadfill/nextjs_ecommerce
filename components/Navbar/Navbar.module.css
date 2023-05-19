@@ -1,0 +1,15 @@
+
+.wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+.li:not(:last-child){
+    margin-right: 38px;
+}
+
+@media (max-width: 1410px) {
+    .li:not(:last-child){
+        margin-right: 18.5px;
+    }
+  }
