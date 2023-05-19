@@ -68,6 +68,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   console.log(pageSize);
   await dbConnect();
   const res = await Product.find()
+    .sort({ createdAt: -1 })
     .limit(pageSize)
     .skip(pageSize * (page - 1));
   const data = JSON.parse(JSON.stringify(res));

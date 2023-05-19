@@ -21,7 +21,9 @@ const productSchema = new Schema<IProduct>({
   category: String,
   vote_average: Number,
   image_url: String
-});
+},
+  { timestamps: true }
+);
 
 const Product = models.Product|| model<IProduct>('Product', productSchema);
 
