@@ -12,19 +12,33 @@ export interface IProps {
   pages: number;
 }
 
-const PAGE_SIZE = 1;
+const PAGE_SIZE = 4;
 
 export default function Index(props: IProps): JSX.Element {
   const { data, countProducts, pages } = props;
   const router = useRouter();
 
-  const pageHandler = (page: any) => {
+  const { sort = "featured", page = 1 } = router.query;
+
+  const filterSearch = ({ page, sort }: any) => {
     const { query } = router;
     if (page) query.page = page;
+    if (sort) query.sort = sort;
+
+    console.log(query.sort);
+
     router.push({
       pathname: router.pathname,
-      query,
+      query: query,
     });
+  };
+
+  const pageHandler = (page: any) => {
+    filterSearch({ page });
+  };
+
+  const sortHandler = (e: any) => {
+    filterSearch({ sort: e.target.value });
   };
 
   return (
@@ -38,6 +52,15 @@ export default function Index(props: IProps): JSX.Element {
           офертой и носят информационный характер. Все цены указаны в рублях с
           учетом НДС.
         </p>
+        <div>
+          Сортировка{" "}
+          <select value={sort} onChange={sortHandler}>
+            <option value="newest">Сначало новые</option>
+            <option value="lowest">Сначало дешевые</option>
+            <option value="highest">Сначало дорогие</option>
+            <option value="toprated">По рейтингу</option>
+          </select>
+        </div>
       </div>
       <div>
         <div className={styles.products_list}>
@@ -65,10 +88,21 @@ export default function Index(props: IProps): JSX.Element {
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const pageSize: any = query.pageSize || PAGE_SIZE;
   const page: any = query.page || 1;
-  console.log(pageSize);
+  const sort = query.sort || "";
+  const order: any =
+    sort === "lowest"
+      ? { price: 1 }
+      : sort === "highest"
+      ? { price: -1 }
+      : sort === "toprated"
+      ? { vote_average: -1 }
+      : sort === "newest"
+      ? { createdAt: -1 }
+      : { _id: -1 };
+  console.log(order);
   await dbConnect();
   const res = await Product.find()
-    .sort({ createdAt: -1 })
+    .sort(order)
     .limit(pageSize)
     .skip(pageSize * (page - 1));
   const data = JSON.parse(JSON.stringify(res));
