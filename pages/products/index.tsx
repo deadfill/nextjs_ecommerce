@@ -1,6 +1,6 @@
 import dbConnect from "@/libs/mongodb";
 import Product from "@/models/Product";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import { Key } from "react";
 
@@ -19,7 +19,7 @@ const Category = ({ category }: any) => {
 
 export default Category;
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   await dbConnect();
   const category = await Product.distinct("category");
   return { props: { category } };

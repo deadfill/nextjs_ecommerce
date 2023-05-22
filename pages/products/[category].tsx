@@ -5,9 +5,7 @@ import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 
 const Category = ({ data }: { data: IProduct[] }) => {
-  console.log(data);
   const router = useRouter();
-  console.log(router);
 
   return data.map((item) => (
     <>
