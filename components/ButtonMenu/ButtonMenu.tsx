@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
 import { setClose, setOpen, setMenuLevel } from "../../redux/slices/menuSlice";
+import MenuBurger from "../MenuBurger/MenuBurger";
 
 export default function ButtonMenu({
   className,
@@ -69,6 +70,7 @@ export default function ButtonMenu({
             })}
           ></span>
         </div>
+        <MenuBurger />
         {children}
       </button>
     </>

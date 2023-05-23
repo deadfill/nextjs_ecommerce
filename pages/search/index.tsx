@@ -4,9 +4,6 @@ import ProductItem from "@/components/ProductItem/ProductItem";
 import dbConnect from "@/libs/mongodb";
 
 export default function Search({ data }: { data: IProduct[] }): JSX.Element {
-  if (!data) {
-    return <div>loading</div>;
-  }
   const render = data.map((item) => {
     return <ProductItem key={item._id} data={item}></ProductItem>;
   });

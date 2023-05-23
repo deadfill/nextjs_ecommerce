@@ -15,7 +15,7 @@ const menuItem: MobileMenuProps[] = [
     icon: <HomeSvg />,
   },
   {
-    route: "about",
+    route: "products",
     name: "Каталог",
     icon: <CatalogMobile />,
   },

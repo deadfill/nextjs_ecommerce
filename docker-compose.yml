@@ -35,7 +35,7 @@ services:
     ports:
       - 8081:8081
     environment:
-      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017
+      ME_CONFIG_MONGODB_URL: MONGODB_URI="mongodb://gen_user:filldead18101990@85.193.85.123:27017/default_db?authSource=admin&directConnection=true"
     depends_on:
       - mongo
     networks:

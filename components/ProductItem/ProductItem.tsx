@@ -16,6 +16,7 @@ import IncrIcon from "../../public/icon/productIcon/incr.svg";
 import DecrIcon from "../../public/icon/productIcon/decr.svg";
 import { AppState } from "@/redux/store";
 import { IProduct } from "@/models/Product";
+import ProductSvg from "../../public/productImage.jpg";
 
 export default function Hit({ data }: { data: IProduct }) {
   const [cart, setCart] = useState(false);
@@ -97,7 +98,7 @@ export default function Hit({ data }: { data: IProduct }) {
         <div className={styles.wrapper_image}>
           <Image
             className={styles.card_image}
-            src={data.image_url}
+            src={ProductSvg}
             alt={""}
             fill
             priority

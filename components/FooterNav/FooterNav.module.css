@@ -1,0 +1,30 @@
+.wrapper {
+  display: grid;
+  grid-gap: 30px;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 18px 0 0 0;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);    
+  }
+
+.wrapper ul {
+  color: var(--grey-01);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.item {
+  color: var(--grey-01);
+  list-style: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+.item:hover {
+  color: #A0A3BC;
+}

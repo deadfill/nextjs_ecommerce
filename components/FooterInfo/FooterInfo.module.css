@@ -1,0 +1,11 @@
+.line {
+  border: 1px solid #A0A3BC;
+  transform: rotate(-180deg);
+}
+.flex {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-decoration-line: underline;
+  max-width: 269px;
+}

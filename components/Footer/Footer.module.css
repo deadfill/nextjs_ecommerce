@@ -1,4 +1,32 @@
 .wrapper {
+    display: grid;
+    grid-template-columns: auto minmax(320px, 1410px) auto;
     margin: 0 auto;
     background-color: var(--grey-05);
+    padding-top: 46px;
 }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    grid-column-start: 2;
+}
+
+
+@media (max-width: 1410px) {
+    .wrapper {
+        grid-template-columns: 47px minmax(320px, 1410px) 47px;
+    }
+  }
+
+@media (max-width: 960px) {
+    .wrapper {
+        grid-template-columns: 15px minmax(320px, 960px) 15px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .wrapper {
+        grid-template-columns: 15px minmax(320px, 576px) 15px;
+    }
+  }

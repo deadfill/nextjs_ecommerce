@@ -9,18 +9,18 @@ import clsx from "clsx";
 
 const menuItem: MenuProps[] = [
   {
-    route: "cart",
+    route: "/cart",
     name: "Корзина",
     icon: <CartSvg />,
     counter: true,
   },
   {
-    route: "favorite",
+    route: "/favorite",
     name: "Избраное",
     icon: <FavSvg />,
   },
   {
-    route: "help",
+    route: "/help",
     name: "Профиль",
     icon: <UserSvg />,
   },
