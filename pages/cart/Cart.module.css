@@ -6,3 +6,255 @@
     margin: 0;
     margin-bottom: 63px;
 }
+
+.index_wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.h2 {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+.wrapper {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--grey-04);
+    margin-right: 30px;
+}
+.cart_item {
+    display: grid;
+    grid-template-columns: 1fr 0.0001fr 0.7fr 0.0001fr 1fr;
+    border: 1px solid #A0A3BC;
+    border-radius: 12px;
+    padding: 12px 22px 12px 22px;
+    margin-bottom: 16px;
+}
+
+.wrapper_name {
+    display: flex;
+    padding-right: 43px;
+}
+
+.name {
+    max-width: 210px;
+}
+
+.line {
+    display: block;
+    height: 83px;
+    border: 1px solid #C2C4D2;
+    margin-right: 20px;
+}
+
+.cart_image {
+    margin-right: 20px;
+}
+
+.wrapper_info {
+
+}
+
+.info_price {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--grey-05);
+    color: var(--grey-04);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.count {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--grey-02);
+}
+
+.wrapper_info h2,
+.wrapper_info p {
+  margin: 0;
+  padding: 0;
+}
+
+.info_price h2 {
+    padding-bottom: 40px;
+    color: var(--grey-02);
+}
+
+.info_left {
+    text-align: left;
+}
+  
+.info_right {
+    text-align: right;
+}
+
+.info_profile {
+    display: flex;
+    border-radius: 12px;
+    padding: 12px;
+    background-color: #FDE9DE;
+    flex-direction: column;
+    color: #F56E1E;
+    margin-bottom: 16px;
+}
+
+.info_profile p {
+    color: var(--grey-02);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration-line: underline;
+}
+
+.info_org {
+    border: 1px solid #A0A3BC;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 16px;
+    color: var(--grey-04);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.info_pay {
+    border: 1px solid #A0A3BC;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 16px;
+    color: var(--grey-04);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.info_delivery {
+    border: 1px solid #A0A3BC;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 16px;
+    color: var(--grey-04);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.orange {
+    color: #F56E1E;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.info_org p,
+.info_delivery p,
+.info_pay p {
+    padding-bottom: 10px;
+}
+
+.info_pay p:nth-child(3n) {
+    color: #A0A3BC;
+}
+
+.product_category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: var(--orange-01);
+    align-self: flex-start;
+}
+  
+  .product_category_brend {
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--grey-04);
+}
+  
+  .product_category_name {
+    text-decoration: underline;
+}
+
+.product_counter {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper_price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button_cart_wrapper {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+
+.button_cart_wrapper:not(:last-child) {
+    margin-right: 10px;
+}
+
+.counter {
+    margin-right: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--grey-01);
+}
+
+.flex_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex_button {
+    display: flex;
+    flex-direction: column;
+}
+.del_icon,
+.favorite_icon {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+
+.favorite_icon {
+    padding-bottom: 14px;
+}
+
+.offer_button {
+    background: #F56E1E;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    width: calc(100%);
+    padding: 13px 0 13px 0;
+    margin-bottom: 117px;
+}

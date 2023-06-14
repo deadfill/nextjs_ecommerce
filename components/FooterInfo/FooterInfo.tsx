@@ -1,23 +1,39 @@
 import styles from "./FooterInfo.module.css";
-import Vk from "../../public/icon/footerIcon/vk.svg";
-import Tg from "../../public/icon/footerIcon/telegram.svg";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FooterInfo(): JSX.Element {
   return (
-    <div>
-      <div className={styles.flex}>
-        <Link href={"/"}>
-          Ссылка на форму обратной связи со службой контроля качества
-        </Link>
-        <Link href={"/"}>
-          <Vk></Vk>
-        </Link>
-        <Link href={"/"}>
-          <Tg></Tg>
-        </Link>
-        <div className={styles.line}></div>
-      </div>
+    <div className={styles.wrapper}>
+      <ul className={styles.social}>
+        <li>
+          <Link href={"/"}>
+            Ссылка на форму обратной связи со службой контроля качества
+          </Link>
+        </li>
+        <li>
+          <Link href={"/"}>
+            <Image
+              src={"/icon/footerIcon/vk.svg"}
+              alt={""}
+              width={28}
+              height={28}
+            ></Image>
+          </Link>
+        </li>
+        <li>
+          {" "}
+          <Link href={"/"}>
+            <Image
+              src={"/icon/footerIcon/telegram.svg"}
+              alt={""}
+              width={28}
+              height={28}
+            ></Image>
+          </Link>
+        </li>
+      </ul>
+      <div className={styles.line}></div>
     </div>
   );
 }
