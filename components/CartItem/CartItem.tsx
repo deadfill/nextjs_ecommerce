@@ -4,8 +4,9 @@ import { AppState } from "@/redux/store";
 import {
   addProduct,
   decrement,
-  deleteProduct,
   increment,
+  deleteAllProduct,
+  deleteProduct,
 } from "@/redux/slices/cartSlice";
 import Image from "next/image";
 import ProductSvg from "../../public/productImage.jpg";
@@ -43,8 +44,8 @@ export default function CartItem({ data }: { data: any }): JSX.Element {
     }
   }, [data.id]);
 
-  const deleteCartItem = (id: any) => {
-    dispatch(deleteProduct(id));
+  const deleteCartItem = (item: any) => {
+    dispatch(deleteAllProduct(item));
   };
 
   const toogleFavs = (item: any) => {
