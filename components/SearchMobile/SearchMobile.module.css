@@ -18,6 +18,11 @@
 }
 
 @media (max-width: 768px) {
+
+    .wrapper {
+        height: 90%;
+    }
+
     .searchMenu {
         flex-direction: column;
         position: absolute;
@@ -48,6 +53,14 @@
     .catalogText {
         padding: 0;
         color: var(--grey-02);
+    }
+
+    .formSearch {
+        display: flex;
+        flex-direction: column;
+        height: 84%;
+        justify-content: space-between;
+        align-items: center;
     }
 
   }

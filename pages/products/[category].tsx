@@ -45,6 +45,8 @@ export default function Index(props: IProps): JSX.Element {
     }
   };
 
+  console.log(data);
+
   return (
     <>
       <div className={styles.button_sort}>

@@ -37,7 +37,7 @@ export default function SearchMobile({
         <CloseSearch />
       </span>
       <div className={clsx(styles.wrapper)}>
-        <form onSubmit={onSearch}>
+        <form className={styles.formSearch} onSubmit={onSearch}>
           <input
             required
             value={query}

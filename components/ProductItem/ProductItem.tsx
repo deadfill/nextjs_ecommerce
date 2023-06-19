@@ -92,6 +92,9 @@ export default function Hit({ data }: { data: IProduct }) {
     dispatch(toogleFav(favItem));
   };
 
+  const sliceDescr = (string: string, slice: number) =>
+    string.length > slice ? string.slice(0, slice).trim() + "..." : string;
+
   return (
     <>
       <div className={styles.wrapper}>
@@ -116,7 +119,7 @@ export default function Hit({ data }: { data: IProduct }) {
         <div className={styles.product_name}>
           {data.name[0].toUpperCase() + data.name.slice(1)}
         </div>
-        <div>{data.descriptions}</div>
+        <div>{sliceDescr(data.descriptions, 70)}</div>
         <div>{data.vote_average}</div>
         <div className={styles.product_category}>
           <div className={styles.product_category_brend}>Категория:</div>
