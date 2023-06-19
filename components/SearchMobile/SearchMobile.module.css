@@ -53,6 +53,7 @@
     z-index: 21;
     background-color: #f7f7f7;
     transition: .1s linear;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -71,8 +72,6 @@
     .formSearch {
         display: flex;
         flex-direction: column;
-        height: calc(100vh - 200px) ;
-        justify-content: space-between;
         align-items: center;
     }
 
