@@ -152,6 +152,9 @@
     .footerSocHeader {
         margin-bottom: 27px;
     }
+    .footerText {
+        text-align: center;
+    }
 }
 
 @media (max-width: 576px) {

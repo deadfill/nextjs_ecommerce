@@ -82,31 +82,35 @@ export default function FavoriteItem({ data }: { data: any }) {
     setCount((count) => count - 1);
   };
 
+  const sliceDescr = (string: string, slice: number) =>
+    string.length > slice ? string.slice(0, slice).trim() + "..." : string;
+
   return (
-  <div className={styles.wrapper}>
-    <div className={styles.wrapper_image}>
-      <Image
-        className={styles.card_image}
-        src={ProductSvg}
-        alt={""}
-        fill
-        priority
-      />
-      <button
-        onClick={() => toogleFavs(data)}
-        className={styles.button_favorite}
-      >
-        {fav ? (
-          <FavoriteIconActiv className={styles.favoriteIcon} />
-        ) : (
-          <FavoriteIcon className={styles.favoriteIcon} />
-        )}
-      </button>
-    </div>
+    <div className={styles.wrapper}>
+      <div className={styles.wrapper_image}>
+        <Image
+          className={styles.card_image}
+          src={ProductSvg}
+          alt={""}
+          fill
+          priority
+        />
+        <button
+          onClick={() => toogleFavs(data)}
+          className={styles.button_favorite}
+        >
+          {fav ? (
+            <FavoriteIconActiv className={styles.favoriteIcon} />
+          ) : (
+            <FavoriteIcon className={styles.favoriteIcon} />
+          )}
+        </button>
+      </div>
       <div className={styles.product_price}>{data.price} &#8381;</div>
       <div className={styles.product_name}>
         {data.name[0].toUpperCase() + data.name.slice(1)}
       </div>
+      <div>{sliceDescr(data.descriptions, 70)}</div>
       <div className={styles.product_category}>
         <div className={styles.product_category_brend}>Категория:</div>
         <div className={styles.product_category_name}>
@@ -116,11 +120,11 @@ export default function FavoriteItem({ data }: { data: any }) {
       {cart ? (
         <div className={styles.product_cart_wrapper}>
           <button className={styles.button_cart_wrapper} onClick={decr}>
-            <DecrIcon/>
+            <DecrIcon />
           </button>
           <div>{count}</div>
           <button className={styles.button_cart_wrapper} onClick={incr}>
-            <IncrIcon/>
+            <IncrIcon />
           </button>
         </div>
       ) : (

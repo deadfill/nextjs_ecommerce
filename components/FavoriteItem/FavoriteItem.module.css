@@ -1,14 +1,8 @@
 
 .wrapper {
-    display: grid; 
-    grid-template-rows: 0fr 0fr 0.4fr 0fr 0px; 
-    grid-gap: 10px; 
-    grid-template-areas: 
-      "."
-      "."
-      "."
-      "."
-      "."; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .wrapper_image {

@@ -115,12 +115,11 @@ export default function Hit({ data }: { data: IProduct }) {
           </button>
         </div>
         <div className={styles.product_price}>{data.price} &#8381;</div>
-
         <div className={styles.product_name}>
           {data.name[0].toUpperCase() + data.name.slice(1)}
         </div>
         <div>{sliceDescr(data.descriptions, 70)}</div>
-        <div>{data.vote_average}</div>
+        <div>Рейтинг: {data.vote_average}</div>
         <div className={styles.product_category}>
           <div className={styles.product_category_brend}>Категория:</div>
           <div className={styles.product_category_name}>
@@ -130,11 +129,11 @@ export default function Hit({ data }: { data: IProduct }) {
         {cart ? (
           <div className={styles.product_cart_wrapper}>
             <button className={styles.button_cart_wrapper} onClick={decr}>
-              <DecrIcon className={styles.decrIcon} />
+              <DecrIcon />
             </button>
             <div>{count}</div>
             <button className={styles.button_cart_wrapper} onClick={incr}>
-              <IncrIcon className={styles.incrIcon} />
+              <IncrIcon />
             </button>
           </div>
         ) : (
