@@ -47,3 +47,20 @@
     border-radius: 8px;
     color: white;
 }
+
+@media (max-width: 998px) {
+    .wrapper:last-child {
+      display: none;
+    }
+  }
+
+@media (max-width: 768px) {
+    .wrapper:last-child {
+        display: block;
+      }
+    .textNews {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+  }

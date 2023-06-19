@@ -29,7 +29,7 @@ const newsItem: NewsItem[] = [
 export default function News({ ...props }: NewsProps): JSX.Element {
   const [active, setActive] = useState<boolean>(true);
   return (
-    <section>
+    <section className={styles.news}>
       <Htag tag="h2">Новости</Htag>
       <div className={styles.wrapper} {...props}>
         {newsItem.map(({ name, icon, path, date }, id) => {

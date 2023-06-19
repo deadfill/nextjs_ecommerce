@@ -14,9 +14,10 @@
 }
 
 .menu {
+    display: flex;
+    visibility: hidden;
     flex-direction: column;
     position: absolute;
-    visibility: hidden;
     left: -100%;
     z-index: 21;
     width: 450px;
@@ -37,6 +38,11 @@
     display: none;
 }
 
+.menuShow {
+    visibility: visible;
+    left: 0;
+}
+
 @media (max-width: 768px) {
     .menu {
         width: 100%;
@@ -44,11 +50,6 @@
         padding-top: 35px;
         top: 0;
         overflow: scroll
-    }
-
-    .menuShow {
-        visibility: visible;
-        left: 0;
     }
 
     .coverShow {
@@ -69,3 +70,6 @@
     }
 
   }
+
+
+  

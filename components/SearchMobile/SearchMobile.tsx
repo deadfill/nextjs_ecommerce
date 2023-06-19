@@ -33,22 +33,24 @@ export default function SearchMobile({
       })}
       {...props}
     >
-      <span onClick={() => dispatch(setCloseSearch())}>
+      <span
+        className={styles.closeBtn}
+        onClick={() => dispatch(setCloseSearch())}
+      >
         <CloseSearch />
       </span>
-      <div className={clsx(styles.wrapper)}>
-        <form className={styles.formSearch} onSubmit={onSearch}>
-          <input
-            required
-            value={query}
-            className={styles.search_input}
-            placeholder="Я ищу"
-            onChange={(e) => setQuery(e.target.value)}
-          ></input>
-
-          <button onSubmit={onSearch}>Применить</button>
-        </form>
-      </div>
+      <form className={styles.formSearch} onSubmit={onSearch}>
+        <input
+          required
+          value={query}
+          className={styles.searchInput}
+          placeholder="Поиск значения"
+          onChange={(e) => setQuery(e.target.value)}
+        ></input>
+        <button className={styles.searchBtn} onSubmit={onSearch}>
+          Применить
+        </button>
+      </form>
     </div>
   );
 }

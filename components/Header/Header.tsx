@@ -57,9 +57,9 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
           <SearchBtn />
         </span>
         <Navbar className={styles.navbar} />
+        <MenuBurger />
+        <SearchMobile />
       </div>
-      <SearchMobile />
-      <MenuBurger />
     </header>
   );
 }
