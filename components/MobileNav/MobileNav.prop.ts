@@ -6,5 +6,6 @@ export interface MobileMenuProps {
     route: string,
     name: string,
     icon: ReactElement<SVGElement>
-    counter?: boolean
+    counterCart?: boolean,
+    counterFav?: boolean,
 }

@@ -20,15 +20,16 @@ const menuItem: MobileMenuProps[] = [
     icon: <CatalogMobile />,
   },
   {
-    route: "cart",
+    route: "/cart",
     name: "Корзина",
     icon: <CartSvg />,
-    counter: true,
+    counterCart: true,
   },
   {
-    route: "favorite",
+    route: "/favorite",
     name: "Избраное",
     icon: <FavSvg />,
+    counterFav: true,
   },
   {
     route: "help",
@@ -38,18 +39,20 @@ const menuItem: MobileMenuProps[] = [
 ];
 
 export default function Navbar({ ...props }: MobileNavProps): JSX.Element {
-  const buildMenu = menuItem.map(({ route, name, icon, counter }, id) => {
-    return (
-      <li className={styles.li} key={id}>
-        <Link href={`${route}`}>
-          <ButtonNav counter={counter}>
-            {icon}
-            {name}
-          </ButtonNav>
-        </Link>
-      </li>
-    );
-  });
+  const buildMenu = menuItem.map(
+    ({ route, name, icon, counterCart, counterFav }, id) => {
+      return (
+        <li className={styles.li} key={id}>
+          <Link href={`${route}`}>
+            <ButtonNav counterFav={counterFav} counterCart={counterCart}>
+              {icon}
+              {name}
+            </ButtonNav>
+          </Link>
+        </li>
+      );
+    }
+  );
 
   return (
     <div className={styles.wrapper}>

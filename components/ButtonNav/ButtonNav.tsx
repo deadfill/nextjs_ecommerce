@@ -6,22 +6,30 @@ import { AppState } from "@/redux/store";
 
 export default function ButtonNav({
   children,
-  counter,
+  counterCart,
+  counterFav,
   ...props
 }: ButtonNavProps): JSX.Element {
   const cartCounter = useSelector((state: AppState) => state.cartSlice.counter);
+  const favCounter = useSelector(
+    (state: AppState) => state.favoriteSlice.counter
+  );
+
   return (
     <div className={styles.wrapper_button}>
       <button
         className={clsx(styles.button, {
-          [styles.button_cart]: counter,
+          [styles.button_cart]: counterCart,
         })}
         {...props}
       >
         {children}
       </button>
-      {counter && cartCounter > 0 && (
+      {counterCart && cartCounter > 0 && (
         <div className={styles.cart_counter}>{cartCounter}</div>
+      )}
+      {counterFav && favCounter > 0 && (
+        <div className={styles.cart_counter}>{favCounter}</div>
       )}
     </div>
   );

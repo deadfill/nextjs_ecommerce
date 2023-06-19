@@ -85,17 +85,12 @@ export default function CartItem({ data }: { data: any }): JSX.Element {
         />
         <div className={styles.name}>{data.name}</div>
       </div>
-      <div className={styles.line}></div>
-
       <div className={styles.product_category}>
         <div className={styles.product_category_brend}>Категория:</div>
         <div className={styles.product_category_name}>
           {data.category[0].toUpperCase() + data.category.slice(1)}
-
-          <div>{data.count}</div>
         </div>
       </div>
-      <div className={styles.line}></div>
       <div className={styles.wrapper_price}>
         <div className={styles.flex_box}>
           <div>Цена 1 шт.</div>

@@ -37,10 +37,10 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 768px) {
     .wrapper {
         margin: 0 auto;
-        grid-template-columns: 15px minmax(320px, 576px) 15px;
+        grid-template-columns: 15px minmax(320px, 768) 15px;
         grid-template-areas: 
         "header header header "
         ". body ."

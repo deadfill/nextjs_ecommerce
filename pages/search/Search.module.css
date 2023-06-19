@@ -112,11 +112,14 @@
     .products_list {
         grid-template-columns: 1fr 1fr 1fr;
     }
-}
+  }
 
 @media (max-width: 768px) {
     .wrapper {
         grid-template-columns: auto;
+    }
+    .products_list {
+        grid-template-columns: 1fr 1fr 1fr;
     }
     .wrapper_menu {
         display: none;

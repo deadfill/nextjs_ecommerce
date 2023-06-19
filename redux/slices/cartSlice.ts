@@ -30,7 +30,11 @@ export const cartSlice = createSlice({
       state.counter++;
     },
     decrement: (state) => {
-      state.counter--;
+      if(state.counter > 1 ) {
+        state.counter--;
+      } else if (state.counter === 1) {
+        state.counter = 0;
+      }
     },
     addProduct: (state, action) => {
       const item = state.cart.find((item) => item.id === action.payload.id);
@@ -47,7 +51,6 @@ export const cartSlice = createSlice({
       if(item?.count === 1) {
         state.cart = state.cart.filter(item => item.id !== action.payload.id);
         state.price = state.price - +action.payload.price;
-        state.counter--;
       } else if (item) {
         item.count--;
         state.price = state.price - +action.payload.price;

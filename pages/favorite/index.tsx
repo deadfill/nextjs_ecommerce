@@ -1,25 +1,25 @@
+import FavoriteItem from "@/components/FavoriteItem/FavoriteItem";
+import NotFavoriteItem from "@/components/NotFavoriteItem/NotFavoriteItem";
 import { AppState } from "@/redux/store";
 import { useSelector } from "react-redux";
+import styles from "./Favorite.module.css";
 
 export default function Help(): JSX.Element {
   const favoriteItems = useSelector(
     (state: AppState) => state.favoriteSlice.favorite
   );
   if (favoriteItems.length === 0) {
-    return <div>Вы еще не добавили ни один товар в избранное.</div>;
+    return <NotFavoriteItem />;
   }
 
-  const renderFavoriteItems = favoriteItems.map((item, id) => {
-    return (
-      <li key={id}>
-        <div>{item.name}</div>
-      </li>
-    );
+  const render = favoriteItems.map((item, id) => {
+    return <FavoriteItem data={item} />;
   });
 
   return (
     <>
-      <ul>{renderFavoriteItems}</ul>
+      <h2 className={styles.cart_htag}>Избранное</h2>
+      <div className={styles.index_wrapper}>{render}</div>
     </>
   );
 }

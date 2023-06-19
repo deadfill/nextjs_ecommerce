@@ -3,15 +3,20 @@ import { createSlice } from '@reduxjs/toolkit';
 export interface CartItem {
   id: number,
   name: string,
-  count: number
+  count: number,
+  price: number,
+  category: string,
+  descriptions: string
 }
 
 export interface CounterState {
   favorite: CartItem[]
+  counter: number
 }
 
 const initialState: CounterState = {
   favorite: [],
+  counter: 0,
 };
 
 export const favoriteSlice = createSlice({
@@ -23,8 +28,10 @@ export const favoriteSlice = createSlice({
       console.log(favItem);
       if(favItem) {
         state.favorite = state.favorite.filter(item => item.id !== action.payload.id);
+        state.counter--;
       } else {
         state.favorite.push(action.payload);
+        state.counter++;
       }
     },
   },

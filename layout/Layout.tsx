@@ -9,7 +9,6 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       <Header className={styles.header} />
       <main className={styles.body}>{children}</main>
       <MobileNav></MobileNav>
-      <Footer className={styles.footer} />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
 import { setClose, setMenuLevel } from "../../redux/slices/menuSlice";
 import { useRouter } from "next/router";
+import CloseBtn from "/public/icon/catalogIcon/closeCatalog.svg";
 
 export default function MenuBurger({ ...props }: MenuBurgerProps): JSX.Element {
   const dispatch = useDispatch();
@@ -44,6 +45,13 @@ export default function MenuBurger({ ...props }: MenuBurgerProps): JSX.Element {
           [styles.menuShow]: open,
         })}
       >
+        <div className={styles.catalog}>
+          <span className={styles.closeBtn}>
+            <CloseBtn />
+          </span>
+          <p className={styles.catalogText}>Каталог</p>
+        </div>
+
         {category.map((item, i) => {
           return (
             <ButtonCatalog key={i} onClick={() => menuLevel(item)}>

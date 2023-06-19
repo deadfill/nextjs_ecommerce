@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface CounterState {
+  openedSearch: boolean
   opened: boolean
   menuLevel: number
 }
 
 const initialState: CounterState = {
+  openedSearch: false,
   opened: false,
   menuLevel: 1
 };
@@ -22,12 +24,18 @@ export const menuSlice = createSlice({
     },
     setMenuLevel: (state, action) => {
       state.menuLevel = action.payload;
-    }
+    },
+    setOpenSearch (state) {
+      state.openedSearch = true;
+    },
+    setCloseSearch: (state) => {
+      state.openedSearch = false;
+    },
   },
 
 });
 
-export const { setOpen, setClose, setMenuLevel } = menuSlice.actions;
+export const { setOpen, setClose, setMenuLevel, setOpenSearch, setCloseSearch } = menuSlice.actions;
 
 
 

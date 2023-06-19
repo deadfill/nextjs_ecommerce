@@ -12,12 +12,13 @@ const menuItem: MenuProps[] = [
     route: "/cart",
     name: "Корзина",
     icon: <CartSvg />,
-    counter: true,
+    counterCart: true,
   },
   {
     route: "/favorite",
     name: "Избраное",
     icon: <FavSvg />,
+    counterFav: true,
   },
   {
     route: "/help",
@@ -30,18 +31,20 @@ export default function Navbar({
   className,
   ...props
 }: NavbarProps): JSX.Element {
-  const buildMenu = menuItem.map(({ route, name, icon, counter }, id) => {
-    return (
-      <li className={styles.li} key={id}>
-        <Link href={`${route}`}>
-          <ButtonNav counter={counter}>
-            {icon}
-            {name}
-          </ButtonNav>
-        </Link>
-      </li>
-    );
-  });
+  const buildMenu = menuItem.map(
+    ({ route, name, icon, counterCart, counterFav }, id) => {
+      return (
+        <li className={styles.li} key={id}>
+          <Link href={`${route}`}>
+            <ButtonNav counterFav={counterFav} counterCart={counterCart}>
+              {icon}
+              {name}
+            </ButtonNav>
+          </Link>
+        </li>
+      );
+    }
+  );
 
   return (
     <nav className={clsx(className)} {...props}>

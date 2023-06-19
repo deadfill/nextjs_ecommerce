@@ -1,6 +1,7 @@
 import { NotCartItemProps } from "./NotCartItem.props";
 import styles from "./NotCartItem.module.css";
 import CartIcon from "../../public/icon/productIcon/cartIcon.svg";
+import Link from "next/link";
 
 export default function NotCartItem({
   ...props
@@ -13,10 +14,12 @@ export default function NotCartItem({
           Перейдите в каталог продукции или воспользуйтесь поиском, чтобы
           выбрать нужный товар
         </p>
-        <button className={styles.button_cart}>
-          <CartIcon />
-          Перейти в каталог
-        </button>
+        <Link href={"/catalog"}>
+          <button className={styles.button_cart}>
+            <CartIcon />
+            Перейти в каталог
+          </button>
+        </Link>
       </div>
     </div>
   );
