@@ -51,6 +51,18 @@
     .wrapper {
         max-width: none;
     }
+
+    .itemPopular {
+        padding: 15px 13px 23px 13px;
+    }
+
+    .text {
+        margin-top: 22px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
+    }
+    
   }
 
 
