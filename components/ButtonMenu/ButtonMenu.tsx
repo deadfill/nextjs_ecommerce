@@ -70,7 +70,6 @@ export default function ButtonMenu({
             })}
           ></span>
         </div>
-        <MenuBurger />
         {children}
       </button>
     </>

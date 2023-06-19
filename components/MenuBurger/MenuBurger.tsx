@@ -46,7 +46,7 @@ export default function MenuBurger({ ...props }: MenuBurgerProps): JSX.Element {
         })}
       >
         <div className={styles.catalog}>
-          <span className={styles.closeBtn}>
+          <span onClick={closeMenu} className={styles.closeBtn}>
             <CloseBtn />
           </span>
           <p className={styles.catalogText}>Каталог</p>

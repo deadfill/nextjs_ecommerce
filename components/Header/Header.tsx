@@ -12,6 +12,7 @@ import { setOpenSearch } from "../../redux/slices/menuSlice";
 import SearchMobile from "../SearchMobile/SearchMobile";
 import { AppState } from "@/redux/store";
 import { useEffect } from "react";
+import MenuBurger from "../MenuBurger/MenuBurger";
 
 export default function Header({ ...props }: HeaderProps): JSX.Element {
   const isBig = useMediaQuery({ minWidth: 1201 });
@@ -56,8 +57,9 @@ export default function Header({ ...props }: HeaderProps): JSX.Element {
           <SearchBtn />
         </span>
         <Navbar className={styles.navbar} />
-        <SearchMobile />
       </div>
+      <SearchMobile />
+      <MenuBurger />
     </header>
   );
 }

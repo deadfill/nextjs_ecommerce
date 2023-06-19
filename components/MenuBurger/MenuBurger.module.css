@@ -14,7 +14,6 @@
 }
 
 .menu {
-    display: flex;
     flex-direction: column;
     position: absolute;
     visibility: hidden;
@@ -26,34 +25,6 @@
     transition: 0.2s ease all;
     top: 130px;
     border: solid 2px white;
-
-}
-
-.menuLevel2 {
-    display: flex;
-    flex-direction: column;
-    visibility: hidden;
-    position: absolute;
-    background-color: white;
-    top: 135px;
-    width: 300px;
-    left: 450px;
-    height: 100vh;
-    z-index: 20;
-    border-left: 1px solid #C2C4D2;
-    padding: 11px 30px 0 30px;
-    transition: 0.2s ease all;
-    opacity: 0;
-}
-
-.menuLevel2Show {
-    visibility: visible;
-    opacity: 1;
-}
-
-.menuShow {
-    visibility: visible;
-    left: 0;
 }
 
 .htag {
@@ -68,19 +39,10 @@
 
 @media (max-width: 768px) {
     .menu {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        left: -100%;
-        visibility: hidden;
-        z-index: 21;
         width: 100%;
         height: 100vh;
         padding-top: 35px;
-        background-color: white;
-        transition: 0.2s ease all;
         top: 0;
-        border: solid 2px white;
         overflow: scroll
     }
 
