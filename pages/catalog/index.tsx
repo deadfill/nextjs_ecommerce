@@ -5,11 +5,12 @@ import { GetStaticProps } from "next";
 import styles from "./Catalog.module.css";
 
 export default function Catalog({ category }: any): JSX.Element {
-  const render = category.map((item: any) => {
+  const render = category.map((item: any, index: number) => {
     return (
       <PopularCatItem
+        key={index}
         name={item}
-        icon={""}
+        icon={"/icon/conectors.svg"}
         path={`products/${item}`}
       ></PopularCatItem>
     );
@@ -20,5 +21,6 @@ export default function Catalog({ category }: any): JSX.Element {
 export const getStaticProps: GetStaticProps = async () => {
   await dbConnect();
   const category = await Product.distinct("category");
+
   return { props: { category } };
 };

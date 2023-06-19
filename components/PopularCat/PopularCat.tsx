@@ -36,14 +36,19 @@ const popularCatItems: PopularCatItemProps[] = [
   },
 ];
 
-export default function PopularCat({ ...props }: PopularCatProps): JSX.Element {
+export default function PopularCat({ category, ...props }: any): JSX.Element {
   return (
     <section>
       <Htag tag="h2">Популярные категории</Htag>
       <div className={styles.wrapper} {...props}>
-        {popularCatItems.map(({ icon, name, path }, id) => {
+        {category.map((item: any, id: any) => {
           return (
-            <PopularCatItem key={id} name={name} icon={icon} path={path} />
+            <PopularCatItem
+              key={id}
+              name={item}
+              icon={"/icon/conectors.svg"}
+              path={`products/${item}`}
+            />
           );
         })}
       </div>
