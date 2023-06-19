@@ -8,7 +8,8 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
     <div className={styles.wrapper}>
       <Header className={styles.header} />
       <main className={styles.body}>{children}</main>
-      <MobileNav></MobileNav>
+      <MobileNav />
+      <Footer className={styles.footer} />
     </div>
   );
 }

@@ -17,3 +17,25 @@
     margin: 0;
     margin-bottom: 63px;
 }
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 998px) {
+    .index_wrapper {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .index_wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .index_wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}

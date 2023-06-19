@@ -10,6 +10,98 @@
     display: flex;
     justify-content: space-between;
     grid-column-start: 2;
+    margin-bottom: 80px;
+}
+
+.footerLogo {
+    display: flex;
+    flex-direction: column;
+    max-width: 240px;
+    align-self: flex-start;
+    margin-right: 10px;
+}
+
+.footerAbout {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerSoc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 330px;
+}
+
+.footerHead {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--grey-04);
+    margin-bottom: 19px;
+}
+
+.footerLink {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--grey-04);
+}
+
+.footerLink:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.footerText {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    color: var(--grey-04);
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.footerSocHeader {
+    margin: 0;
+    text-align: end;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    color: var(--grey-07);
+    margin-bottom: 2px;
+}
+
+.footerSocPara {
+    margin: 0;
+    text-align: end;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--grey-04);
+}
+
+.footerSocBlock {
+    margin-bottom: 22px;
+}
+
+.footerSocIcon {
+    margin: 0;
+    text-align: end;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    color: var(--grey-04);
+    padding-bottom: 10px;
+    margin-bottom: 17px;
+}
+
+.footerSocImg:not(:last-child) {
+    margin-right: 30px;
 }
 
 
@@ -23,10 +115,47 @@
     .wrapper {
         grid-template-columns: 15px minmax(320px, 960px) 15px;
     }
-  }
+    .footerLogo {
+        max-width: 175px;
+    }
+}
 
-  @media (max-width: 576px) {
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footerLogo {
+        max-width: none;
+        align-self: center;
+        align-items: center;
+    }
+
+    .footerAbout {
+        display: none;
+    }
+    .footerInfo {
+        display: none;
+    }
+    .footerSoc {
+        align-items: center;
+    }
+    .footerSocIcon {
+        text-align: center;
+    }
+    .footerSocHeader {
+        text-align: center;
+    }
+    .footerSocPara {
+        text-align: center;
+    }
+    .footerSocHeader {
+        margin-bottom: 27px;
+    }
+}
+
+@media (max-width: 576px) {
     .wrapper {
         grid-template-columns: 15px minmax(320px, 576px) 15px;
     }
-  }
+}

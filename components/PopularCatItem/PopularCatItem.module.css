@@ -42,10 +42,15 @@
     .wrapper:nth-last-child(-n+2) {
         display: inline-block;
     }
+    .wrapper {
+        max-width: 180px;
+    }
   }
 
   @media (max-width: 576px) {
-
+    .wrapper {
+        max-width: none;
+    }
   }
 
 
