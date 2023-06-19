@@ -9,6 +9,7 @@
     flex-direction: column;
     width: 300px;
     margin-right: 60px;
+    text-align: center;
     
 }
 
@@ -90,7 +91,23 @@
 
 .button_sort {
     display: flex;
+    justify-content: flex-end;
     margin-bottom: 20px;
+}
+
+.button_sort button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.button_sort button {
+    cursor: pointer;
+    background: #FFFFFF;
+    color: var(--grey-02);
+    border: 1px solid #6E7191;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 

@@ -45,20 +45,15 @@ export default function Index(props: IProps): JSX.Element {
     }
   };
 
-  console.log(data);
-
   return (
     <>
       <div className={styles.button_sort}>
         <button onClick={() => sortHandler()}>По цене</button>
-        <button>По названию</button>
+        <button>По дате добавления</button>
         <button>По рейтингу</button>
       </div>
       <div className={styles.wrapper}>
         <div className={styles.wrapper_menu}>
-          <button type="button" onClick={() => router.back()}>
-            Click here to go back
-          </button>
           {data.length === 0 ? "No" : `Найдено товаров ${countProducts}`}
 
           <p className={styles.menu_description}>

@@ -33,12 +33,16 @@ export default function SearchMobile({
       })}
       {...props}
     >
-      <span
-        className={styles.closeBtn}
-        onClick={() => dispatch(setCloseSearch())}
-      >
-        <CloseSearch />
-      </span>
+      <div className={styles.wrapperClose}>
+        <span
+          className={styles.closeBtn}
+          onClick={() => dispatch(setCloseSearch())}
+        >
+          <CloseSearch />
+        </span>
+        <h3 className={styles.searchTitle}>Поиск</h3>
+      </div>
+
       <form className={styles.formSearch} onSubmit={onSearch}>
         <input
           required

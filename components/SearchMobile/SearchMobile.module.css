@@ -13,11 +13,12 @@
     height: 100vh;
     padding: 35px 15px 0 15px;
     top: 0;
-    overflow: scroll
 }
 
-.closeBtn svg {
-    margin-bottom: 55px;
+.wrapperClose {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
 }
 
 .menuShow {
@@ -53,7 +54,18 @@
     z-index: 21;
     background-color: #f7f7f7;
     transition: .1s linear;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.closeBtn {
+    margin-right: 20px;
+}
+
+.searchTitle {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--grey-04);
 }
 
 @media (max-width: 768px) {

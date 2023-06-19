@@ -43,6 +43,17 @@
     left: 0;
 }
 
+.closeBtn {
+    margin-right: 20px;
+}
+
+.catalogText {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--grey-04);
+}
+
 @media (max-width: 768px) {
     .menu {
         width: 100%;
