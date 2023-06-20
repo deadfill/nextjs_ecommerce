@@ -1,4 +1,5 @@
 import { IProduct } from "@/models/Product";
+import styles from "./Admin.module.css";
 
 interface IProducts {
   data: IProduct[];
@@ -23,7 +24,11 @@ export default function Help({ data }: IProducts): JSX.Element {
       </li>
     );
   });
-  return <div>{renderItem}</div>;
+  return (
+    <div>
+      <ul className={styles.wrapper}>{renderItem}</ul>;
+    </div>
+  );
 }
 
 export async function getServerSideProps() {

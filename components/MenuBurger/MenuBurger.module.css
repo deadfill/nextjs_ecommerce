@@ -28,6 +28,18 @@
     border: solid 2px white;
 }
 
+.menu::before { 
+    content: ""; 
+    position: absolute; 
+    left: -600px; 
+    width: 600px; 
+    height: 100%; 
+    background-color: white; 
+    opacity: 1; 
+    z-index: -1;
+    transition: opacity 0.2s ease;
+  }
+
 .htag {
     color: var(--orange-01);
     margin: 0;
