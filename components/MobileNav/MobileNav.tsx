@@ -31,11 +31,6 @@ const menuItem: MobileMenuProps[] = [
     icon: <FavSvg />,
     counterFav: true,
   },
-  {
-    route: "help",
-    name: "Профиль",
-    icon: <UserSvg />,
-  },
 ];
 
 export default function Navbar({ ...props }: MobileNavProps): JSX.Element {

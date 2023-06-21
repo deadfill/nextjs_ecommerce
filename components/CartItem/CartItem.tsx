@@ -94,7 +94,7 @@ export default function CartItem({ data }: { data: any }): JSX.Element {
       <div className={styles.wrapper_price}>
         <div className={styles.flex_box}>
           <div>Цена 1 шт.</div>
-          <div>{data.price}</div>
+          <div>{data.price} ₽</div>
         </div>
         <div className={styles.product_counter}>
           <button onClick={decr} className={styles.button_cart_wrapper}>
@@ -107,7 +107,7 @@ export default function CartItem({ data }: { data: any }): JSX.Element {
         </div>
         <div className={styles.flex_box}>
           <div>Итого</div>
-          <div>123</div>
+          <div>{data.count * data.price} ₽</div>
         </div>
         <div className={styles.flex_button}>
           <button

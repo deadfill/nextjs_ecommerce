@@ -8,6 +8,8 @@
     padding: 7px 11px;
     align-items: start;
     z-index: 100;
+    justify-items: center;
+    align-items: center;
 }
 
 .mobile_nav {
@@ -21,7 +23,7 @@
 @media (max-width: 768px) {
     .wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 16px;
     }
   }

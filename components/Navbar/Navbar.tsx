@@ -20,11 +20,6 @@ const menuItem: MenuProps[] = [
     icon: <FavSvg />,
     counterFav: true,
   },
-  {
-    route: "/help",
-    name: "Профиль",
-    icon: <UserSvg />,
-  },
 ];
 
 export default function Navbar({
