@@ -8,8 +8,7 @@ import Link from "next/link";
 export default function Help(): JSX.Element {
   const cartItems = useSelector((state: AppState) => state.cartSlice.cart);
   const totalPrice = useSelector((state: AppState) => state.cartSlice.price);
-
-  const totalCount = cartItems.reduce((total, item) => total + item.count, 0);
+  const counter = useSelector((state: AppState) => state.cartSlice.counter);
 
   if (cartItems.length == 0) {
     return <NotCartItem />;
@@ -35,7 +34,7 @@ export default function Help(): JSX.Element {
             </div>
             <div className={styles.info_right}>
               <h2>{totalPrice} ₽</h2>
-              <p className={styles.count}>{totalCount} шт</p>
+              <p className={styles.count}>{counter} шт</p>
             </div>
           </div>
           <div className={styles.info_profile}>
